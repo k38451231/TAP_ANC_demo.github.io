@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>音訊比較展示頁面</title>
+    <style>
+        body {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px;
+            background-color: #f4f4f4;
+        }
+
+        /* 每個大區塊的樣式 */
+        .section-container {
+            background-color: white;
+            padding: 20px;
+            margin-bottom: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        /* 預留圖片與文字區域 */
+        .content-placeholder {
+            margin-bottom: 20px;
+            padding: 20px;
+            border: 2px dashed #ccc;
+            background-color: #fafafa;
+            text-align: center;
+            color: #666;
+        }
+        
+        /* 圖片容器樣式 (新版) */
+        .img-wrapper {
+            background-color: #eee; 
+            padding: 10px; 
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        /* 表格樣式 */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            table-layout: fixed; /* 固定寬度，讓播放器整齊 */
+        }
+
+        th {
+            background-color: #4472C4; /* 圖片中的深藍色 */
+            color: white;
+            padding: 15px;
+            text-align: center;
+            border: 1px solid white;
+            font-weight: bold;
+        }
+
+        td {
+            background-color: #D9E1F2; /* 圖片中的淺藍灰色 */
+            padding: 10px;
+            text-align: center;
+            border: 1px solid white;
+            vertical-align: middle;
+        }
+
+        /* 第一欄 (標籤欄) 特別樣式 */
+        td:first-child {
+            font-weight: bold;
+            color: #333;
+            width: 15%;
+        }
+
+        /* 音訊播放器樣式調整 */
+        audio {
+            width: 100%;
+            height: 35px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>實驗結果展示</h1>
+
+    <div class="section-container">
+        <div class="content-placeholder">
+            <div style="margin-bottom: 30px;">
+                <div class="img-wrapper">
+                    <img src="./Image/EAP_WAV.png" style="max-width: 100%; height: auto;" alt="實驗圖片1">
+                </div>
+                <p style="margin-top: 5px;">[這裡插入文字敘述 1：例如說明 Enh 與 ANC 的比較背景...]</p>
+            </div>
+
+            <hr style="margin: 20px 0; border: 0; border-top: 1px dashed #ccc;">
+
+            <div>
+                <div class="img-wrapper">
+                    <img src="./Image/EAP_SPEC.png" style="max-width: 100%; height: auto;" alt="實驗圖片2">
+                </div>
+                <p style="margin-top: 5px;">[敘述 2：請在此輸入第二張圖的說明]</p>
+            </div>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>&alpha; = 0<br>(ANC)</th>
+                    <th>&alpha; = 0.5</th>
+                    <th>&alpha; = 1<br>(Enhancement)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Enh - ANC</td>
+                    <td><audio controls src="./Audio/EAP_a00.wav"></audio></td>
+                    <td><audio controls src="./Audio/EAP_a05.wav"></audio></td>
+                    <td><audio controls src="./Audio/EAP_a10.wav"></audio></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="section-container">
+        <div class="content-placeholder">
+            <div style="margin-bottom: 30px;">
+                <div class="img-wrapper">
+                    <img src="./Image/EIP_WAV.png" style="max-width: 100%; height: auto;" alt="實驗圖片1">
+                </div>
+                <p style="margin-top: 5px;">[這裡插入文字敘述 1：例如說明 Immersion 模式的效果...]</p>
+            </div>
+
+            <hr style="margin: 20px 0; border: 0; border-top: 1px dashed #ccc;">
+
+            <div>
+                <div class="img-wrapper">
+                    <img src="./Image/EIP_SPEC.png" style="max-width: 100%; height: auto;" alt="實驗圖片2">
+                </div>
+                <p style="margin-top: 5px;">[敘述 2：請在此輸入第二張圖的說明]</p>
+            </div>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>&alpha; = 0<br>(Immersion)</th>
+                    <th>&alpha; = 0.5</th>
+                    <th>&alpha; = 1<br>(Enhancement)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Enh - Imm</td>
+                    <td><audio controls src="./Audio/EIP_a00.wav"></audio></td>
+                    <td><audio controls src="./Audio/EIP_a05.wav"></audio></td>
+                    <td><audio controls src="./Audio/EIP_a10.wav"></audio></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="section-container">
+        <div class="content-placeholder">
+            <div style="margin-bottom: 30px;">
+                <div class="img-wrapper">
+                    <img src="./Image/IAP_WAV.png" style="max-width: 100%; height: auto;" alt="實驗圖片1">
+                </div>
+                <p style="margin-top: 5px;">[這裡插入文字敘述 1：總結 ANC 與 Immersion 的差異...]</p>
+            </div>
+
+            <hr style="margin: 20px 0; border: 0; border-top: 1px dashed #ccc;">
+
+            <div>
+                <div class="img-wrapper">
+                    <img src="./Image/IAP_SPEC.png" style="max-width: 100%; height: auto;" alt="實驗圖片2">
+                </div>
+                <p style="margin-top: 5px;">[敘述 2：請在此輸入第二張圖的說明]</p>
+            </div>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>&alpha; = 0<br>(Immersion)</th>
+                    <th>&alpha; = 0.5</th>
+                    <th>&alpha; = 1<br>(ANC)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>ANC - Imm</td>
+                    <td><audio controls src="./Audio/IAP_a00.wav"></audio></td>
+                    <td><audio controls src="./Audio/IAP_a05.wav"></audio></td>
+                    <td><audio controls src="./Audio/IAP_a10.wav"></audio></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>
