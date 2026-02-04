@@ -32,23 +32,25 @@
             color: #666;
         }
         
-        /* 圖片容器樣式 (新版) */
+        /* 圖片容器樣式 */
         .img-wrapper {
             background-color: #eee; 
             padding: 10px; 
             display: inline-block;
             margin-bottom: 10px;
+            /* 如果希望圖片並排時有間距，可以加這行 */
+            margin-right: 10px; 
         }
 
         /* 表格樣式 */
         table {
             width: 100%;
             border-collapse: collapse;
-            table-layout: fixed; /* 固定寬度，讓播放器整齊 */
+            table-layout: fixed;
         }
 
         th {
-            background-color: #4472C4; /* 圖片中的深藍色 */
+            background-color: #4472C4;
             color: white;
             padding: 15px;
             text-align: center;
@@ -57,21 +59,19 @@
         }
 
         td {
-            background-color: #D9E1F2; /* 圖片中的淺藍灰色 */
+            background-color: #D9E1F2;
             padding: 10px;
             text-align: center;
             border: 1px solid white;
             vertical-align: middle;
         }
 
-        /* 第一欄 (標籤欄) 特別樣式 */
         td:first-child {
             font-weight: bold;
             color: #333;
             width: 15%;
         }
 
-        /* 音訊播放器樣式調整 */
         audio {
             width: 100%;
             height: 35px;
@@ -84,11 +84,30 @@
 
     <div class="section-container">
         <div class="content-placeholder">
+            <div style="margin-bottom: 15px;">
+                <div class="img-wrapper">
+                    <img src="./Image/ref_pic.png" style="max-width: 50%; height: auto;" alt="頂部圖片1">
+                </div>
+                <div class="img-wrapper">
+                    <img src="./Image/ref_spec.png" style="max-width: 100%; height: auto;" alt="頂部圖片2">
+                </div>
+            </div>
+            <p>Unprocessed Audio Spectrogram</p>
+        </div>
+
+        <div style="text-align: center; padding: 10px;">
+            <p style="margin-bottom: 5px; font-weight: bold; color: #333;">Unprocessed Audio</p>
+            <audio controls src="./Audio/IAP_a00.wav" style="width: 80%;"></audio>
+        </div>
+    </div>
+
+    <div class="section-container">
+        <div class="content-placeholder">
             <div style="margin-bottom: 30px;">
                 <div class="img-wrapper">
                     <img src="./Image/EAP_WAV.png" style="max-width: 100%; height: auto;" alt="實驗圖片1">
                 </div>
-                <p style="margin-top: 5px;">EAP Tuning Results waveform</p>
+                <p style="margin-top: 5px;">EAP Tuning Results Waveform</p>
             </div>
 
             <hr style="margin: 20px 0; border: 0; border-top: 1px dashed #ccc;">
@@ -97,7 +116,7 @@
                 <div class="img-wrapper">
                     <img src="./Image/EAP_SPEC.png" style="max-width: 100%; height: auto;" alt="實驗圖片2">
                 </div>
-                <p style="margin-top: 5px;">EAP Tuning Results spectrogram</p>
+                <p style="margin-top: 5px;">EAP Tuning Results Spectrogram</p>
             </div>
         </div>
 
@@ -127,7 +146,7 @@
                 <div class="img-wrapper">
                     <img src="./Image/EIP_WAV.png" style="max-width: 100%; height: auto;" alt="實驗圖片1">
                 </div>
-                <p style="margin-top: 5px;">EIP Tuning Results waveform</p>
+                <p style="margin-top: 5px;">EIP Tuning Results Waveform</p>
             </div>
 
             <hr style="margin: 20px 0; border: 0; border-top: 1px dashed #ccc;">
@@ -136,7 +155,7 @@
                 <div class="img-wrapper">
                     <img src="./Image/EIP_SPEC.png" style="max-width: 100%; height: auto;" alt="實驗圖片2">
                 </div>
-                <p style="margin-top: 5px;">EIP Tuning Results spectrogram</p>
+                <p style="margin-top: 5px;">EIP Tuning Results Spectrogram</p>
             </div>
         </div>
 
@@ -166,7 +185,7 @@
                 <div class="img-wrapper">
                     <img src="./Image/IAP_WAV.png" style="max-width: 100%; height: auto;" alt="實驗圖片1">
                 </div>
-                <p style="margin-top: 5px;">IAP Tuning Results waveform</p>
+                <p style="margin-top: 5px;">IAP Tuning Results Waveform</p>
             </div>
 
             <hr style="margin: 20px 0; border: 0; border-top: 1px dashed #ccc;">
@@ -175,7 +194,7 @@
                 <div class="img-wrapper">
                     <img src="./Image/IAP_SPEC.png" style="max-width: 100%; height: auto;" alt="實驗圖片2">
                 </div>
-                <p style="margin-top: 5px;">IAP Tuning Results spectrogram</p>
+                <p style="margin-top: 5px;">IAP Tuning Results Spectrogram</p>
             </div>
         </div>
 
